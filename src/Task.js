@@ -51,20 +51,6 @@ class Tasks extends Component {
             console.log(error);
         }
     };
-
-    handleDelete = async (currentTask) => {
-        const originalTasks = this.state.tasks;
-        try {
-            const tasks = originalTasks.filter(
-                (task) => task.id !== currentTask
-            );
-            this.setState({ tasks });
-            await deleteTask(currentTask);
-        } catch (error) {
-            this.setState({ tasks: originalTasks });
-            console.log(error);
-        }
-    };
 }
 
 export default Tasks;
